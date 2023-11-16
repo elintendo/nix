@@ -19,6 +19,12 @@
   # changes in each release.
   home.stateVersion = "23.05";
 
+  programs.git = {
+    enable = true;
+    userName = "elintendo";
+    userEmail = "elintendo@yandex.ru";
+  };
+
   programs.helix = {                              
     enable = true;
     defaultEditor = true;
@@ -51,10 +57,14 @@
     package = pkgs.gnome.adwaita-icon-theme;
     size = 25;
   };
-
+  
   wayland.windowManager.hyprland = {
     enable = true;
+    systemdIntegration = true;
     settings = {
+      misc = {
+        force_default_wallpaper = 0;
+      };
       input = {
         kb_layout = "us,ru";
         kb_options = "grp:win_space_toggle";
@@ -106,8 +116,11 @@
     };
   };
 
-  programs.wofi = {
+  programs.rofi= {
     enable = true;
+    package = pkgs.rofi-wayland;
+    font = "JetBrainsMono Nerd Font 12";
+    theme = "sidebar";
   };
 
   services.gpg-agent = {                          

@@ -9,6 +9,7 @@
         "$mod, M, exit"
         "$mod, B, exec, pkill -SIGUSR1 waybar" # toggle waybar
         "$mod, Return, exec, kitty"
+        "$mod, B, exec, google-chrome-stable"
         "$mod, F, fullscreen"
         "$mod ALT, F, fakefullscreen"
         "$mod, Y, pin"
@@ -47,7 +48,7 @@
 
         "ALT, Tab, focuscurrentorlast"
 
-        "$mod, R, exec, pkill wofi || wofi --show drun"
+        "$mod, R, exec, pkill rofi || rofi -show drun"
         # "$mod, S, exec, pkill rofi || rofi -show window"
         # "$mod, C, exec, pkill rofi || rofi -show calc"
         # "$mod, E, exec, pkill rofi || rofi -show emoji"

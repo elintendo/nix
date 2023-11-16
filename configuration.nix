@@ -31,12 +31,15 @@
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
+
+  # Set up adequate TTY font
   console = {
     earlySetup = true;
     font = "${pkgs.terminus_font}/share/consolefonts/ter-132n.psf.gz";
     packages = with pkgs; [ terminus_font ];
     keyMap = "us";
   };
+  boot.initrd.kernelModules = [ "i915" ];
 
   environment.etc = {
     "xdg/user-dirs.defaults".text = ''
@@ -99,7 +102,7 @@
   #services.xserver.autoRepeatDelay = 210;
   #services.xserver.autoRepeatInterval = 40;
 
-  # programs.hyprland.enable = true;
+  programs.hyprland.enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;

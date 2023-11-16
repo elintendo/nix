@@ -1,4 +1,4 @@
-### childhood
+## childhood
 
 - [obtain NixOS minimal ISO image](https://nixos.org/download), validate SHA-256 using sha256sum
 - copy image onto a USB stick (e.g, using [Ventoy](https://www.ventoy.net/en/index.html))
@@ -8,7 +8,7 @@
   - `cp image.iso /mnt`
 - enter NixOS (e.g, via UEFI boot manager)
 
-### boyhood
+## boyhood
 - pcspkr is not loaded by default (few understand)
 - `setfont ter-132n`
 - `sudo -i`
@@ -32,5 +32,5 @@
 - `nixos-install`
 - `reboot`
 
-### youth
+## youth
 - `passwd user`
