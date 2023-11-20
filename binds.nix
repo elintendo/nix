@@ -6,6 +6,7 @@
       bind = [
         # ",Print, exec, ${grimblast} --notify copysave area"
         # "$mod ALT, L, exec, swaylock"
+        ",Print, exec, grim -g \"$(slurp)\" - | swappy -f -"
         "$mod, M, exit"
         "$mod, B, exec, pkill -SIGUSR1 waybar" # toggle waybar
         "$mod, Return, exec, kitty"
@@ -64,13 +65,13 @@
         # ",KP_Left, exec, pkill rofi || rofi -show emoji"
       ];
 
-      # binde = [
-      #   ",XF86MonBrightnessDown,exec,${brightnessctl} set 10%-"
-      #   ",XF86MonBrightnessUp,exec,${brightnessctl} set +10%"
-      #   ",XF86AudioMute,exec,${pamixer} -t"
-      #   ",XF86AudioLowerVolume,exec,${pamixer} -d 10"
-      #   ",XF86AudioRaiseVolume,exec,${pamixer} -i 10"
-      # ];
+      binde = [
+        ",XF86MonBrightnessDown,exec,brightnessctl set 10%-"
+        ",XF86MonBrightnessUp,exec,brightnessctl set +10%"
+        ",XF86AudioMute,exec,pamixer -t"
+        ",XF86AudioLowerVolume,exec,pamixer -d 10"
+        ",XF86AudioRaiseVolume,exec,pamixer -i 10"
+      ];
 
       bindm = [
         "$mod, mouse:272, movewindow"

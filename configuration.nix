@@ -53,7 +53,14 @@
       VIDEOS=$HOME/bin
     '';
   };
-  
+
+  xdg.portal = {
+    enable = true;
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-hyprland
+    ];
+  };
+
   # Enable the X11 windowing system.
   # services.xserver.enable = true;
 
@@ -109,8 +116,14 @@
 
   programs.fish.enable = true;
 
+  programs.java = { enable = true; package = pkgs.jetbrains.jdk; };
+
+  programs.xwayland.enable = true;
+
   fonts.fonts = with pkgs; [
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+    corefonts
+    vistafonts
   ];
   
   security.sudo.wheelNeedsPassword = false;
@@ -120,33 +133,44 @@
     extraGroups = [ "networkmanager" "wheel" ];
     shell = pkgs.fish;
     packages = with pkgs; [
-      # firefox
+      # screenshot
+      # libnotify
+      # jq
+      grim
+      slurp
+      swappy
+      wl-clipboard
+      dunst
+      
       telegram-desktop
       fish
       kitty
-      # neovim
       git
       google-chrome
       helix
-      # rofi
-      gcc_multi
-      # ghidra
       qbittorrent
       pavucontrol
 
+      gcc_multi
+      gnumake
       go
       # python3
 
+      wlr-randr
+
       libarchive
       # vscode
-      flameshot
+
+      pamixer
+      brightnessctl
 
       #maven
+      ghidra-bin
       #openjdk19
 
       #woeusb
       #ntfs3g
-    #  thunderbird
+      #thunderbird
     ];
   };
 
