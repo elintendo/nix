@@ -9,15 +9,19 @@
     pkgs.btop
   ];
 
-  # This value determines the Home Manager release that your
-  # configuration is compatible with. This helps avoid breakage
-  # when a new Home Manager release introduces backwards
-  # incompatible changes.
-  #
-  # You can update Home Manager without changing this value. See
-  # the Home Manager release notes for a list of state version
-  # changes in each release.
   home.stateVersion = "23.05";
+
+  xdg.userDirs = {
+    enable = true;
+    desktop = "${config.home.homeDirectory}/.void";
+    documents = "${config.home.homeDirectory}/.void";
+    download = "${config.home.homeDirectory}/.void";
+    music ="${config.home.homeDirectory}/.void";
+    pictures = "${config.home.homeDirectory}/.void";
+    publicShare = "${config.home.homeDirectory}/.void";
+    templates = "${config.home.homeDirectory}/.void";
+    videos = "${config.home.homeDirectory}/.void";
+  };
 
   programs.vscode = {
     enable = true;
