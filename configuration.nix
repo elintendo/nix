@@ -61,6 +61,13 @@
     ];
   };
 
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+    dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+  };
+  hardware.opengl.driSupport32Bit = true; # Enables support for 32bit libs that steam uses
+
   # Enable the X11 windowing system.
   # services.xserver.enable = true;
 
@@ -124,6 +131,14 @@
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
     corefonts
     vistafonts
+    noto-fonts
+    noto-fonts-cjk
+    noto-fonts-emoji
+    liberation_ttf
+    fira-code
+    fira-code-symbols
+    dina-font
+    proggyfonts
   ];
   
   security.sudo.wheelNeedsPassword = false;
@@ -141,6 +156,8 @@
       swappy
       wl-clipboard
       dunst
+
+      nodejs
       
       telegram-desktop
       fish
@@ -154,7 +171,8 @@
       gcc_multi
       gnumake
       go
-      # python3
+      gopls
+      racket
 
       wlr-randr
 
@@ -171,8 +189,29 @@
       #woeusb
       #ntfs3g
       #thunderbird
+
+          
+      (python310.withPackages (p:
+        with p; [
+          pandas
+          matplotlib
+          ipython
+          requests
+          numpy
+          scikit-learn
+          pygtrie
+          tqdm
+          scipy
+          spacy
+          notebook
+          jupyter
+          pip
+          nltk
+      ]))
+
     ];
   };
+    
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;

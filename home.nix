@@ -19,6 +19,23 @@
   # changes in each release.
   home.stateVersion = "23.05";
 
+  programs.vscode = {
+    enable = true;
+    package = pkgs.vscode-fhs;
+    mutableExtensionsDir = true; # for jupyter
+    extensions = with pkgs.vscode-extensions; [
+      ms-python.python
+      ms-pyright.pyright
+      ms-toolsai.jupyter
+    ];
+    userSettings = {
+      "window.titleBarStyle" = "custom";
+      "window.zoomLevel" = 1.8;
+      "workbench.startupEditor" = "none";
+    };
+  };
+
+
   programs.git = {
     enable = true;
     userName = "elintendo";
