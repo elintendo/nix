@@ -9,6 +9,10 @@
     pkgs.btop
   ];
 
+  home.sessionVariables = {
+    GOPATH = "$HOME/.go";
+  };
+
   home.stateVersion = "23.05";
 
   xdg.userDirs = {
@@ -70,13 +74,19 @@
     interactiveShellInit = ''
       set fish_greeting 
     '';
+    shellAliases = {
+      b = "cat /sys/class/power_supply/BAT1/capacity";
+      g = "git";
+      gs = "git status";
+      setup = "wlr-randr --output eDP-1 --off; wlr-randr --scale 1.5";
+    };
   };
   # home.file.".icons/default".source = "${pkgs.vanilla-dmz}/share/icons/Vanilla-DMZ";
 
   home.pointerCursor = {
     name = "Adwaita";
     package = pkgs.gnome.adwaita-icon-theme;
-    size = 25;
+    size = 20;
   };
   
   wayland.windowManager.hyprland = {

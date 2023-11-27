@@ -61,6 +61,8 @@
     pulse.enable = true;
   };
 
+  services.upower.ignoreLid = true;
+
   programs.hyprland.enable = true;
 
   programs.fish.enable = true;
@@ -106,6 +108,7 @@
       helix
       qbittorrent
       pavucontrol
+      mpv
 
       gcc_multi
       gnumake
@@ -144,6 +147,7 @@
           jupyter
           pip
           nltk
+          pyspellchecker
       ]))
 
     ];
