@@ -78,7 +78,7 @@
       b = "cat /sys/class/power_supply/BAT1/capacity";
       g = "git";
       gs = "git status";
-      setup = "wlr-randr --output eDP-1 --off; wlr-randr --scale 1.5";
+      setup = "wlr-randr --output eDP-1 --off --output HDMI-A-1 --scale 1.5";
     };
   };
   # home.file.".icons/default".source = "${pkgs.vanilla-dmz}/share/icons/Vanilla-DMZ";

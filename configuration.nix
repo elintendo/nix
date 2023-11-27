@@ -99,6 +99,8 @@
       dunst
 
       nodejs
+
+      swww
       
       telegram-desktop
       fish
